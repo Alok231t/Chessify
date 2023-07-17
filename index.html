@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chess</title>
+	<style type="text/css">
+		body {
+			background-image: url("Pic.jfif");
+			background-repeat: no-repeat;
+			background-size: cover;
+			text-align: center;
+		}
+
+		.container {
+			display: none;
+			width: 100%;
+			height: 100%;
+			padding: 20px;
+			box-sizing: border-box;
+			text-align: center;
+			font-size: 20px;
+			background-color: #b4b4b4;
+			color: red;
+		}
+
+		.button {
+			color: black;
+			padding: 15px 18px;
+			margin: 10px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			cursor: pointer;
+			border-radius: 19px;
+			border: 2px solid red;
+			background-color: cyan;
+			transition: background-color 0.3s, color 0.3s;
+		}
+
+		.button:hover {
+			background-color: #787878;
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<h1 style="color: red; font-size: 80px;">CHESS</h1>
+	<div class="container">
+		<br/><br/>
+		1. Whites will start the game and make their first move.<br/>
+		2. Each player will have 60 seconds to make a move.<br/>
+		If a player doesn't make their move within that time, the opponent will be declared the winner.<br/>
+		3. The whole game should be completed within 45 minutes.<br/>
+		After this time, the game will be declared a draw.<br/>
+		4. The game can be paused at any point, but the game board will not be displayed until the game is resumed.<br/><br/><br/><br/><br/>
+
+		<button id="okButton" class="button"><strong>OKAY</strong></button>
+	</div>
+
+	<div id="controls">
+		<a href="two_player.html"><button class="button">START</button></a>
+		<button id="instructionsButton" class="button">INSTRUCTIONS</button>
+	</div>
+
+	<script type="text/javascript">
+		const container = document.querySelector(".container");
+		const instructionsButton = document.getElementById("instructionsButton");
+		const okButton = document.getElementById("okButton");
+
+		instructionsButton.addEventListener("click", toggleInstructions);
+		okButton.addEventListener("click", toggleInstructions);
+
+		function toggleInstructions() {
+			container.style.display = container.style.display === "none" ? "block" : "none";
+			document.getElementById("controls").style.display = container.style.display === "none" ? "block" : "none";
+		}
+	</script>
+</body>
+</html>
